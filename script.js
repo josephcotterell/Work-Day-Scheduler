@@ -4,9 +4,17 @@
 //$(selector).wrapAll(wrappingElement);
 $(function () {
   var currentDay = $("#currentDay");
-  currentDay.text(moment().format("MMM Do YY"));
+  var currentTime = moment().hour();
   console.log(currentDay);
-  save - btn.addEventListener("click");
+  $(".time-block").each(function () {
+    var staticTime = $(this).attr("id");
+    if (currentTime !== staticTime) {
+      alert("this works");
+    }
+  });
+
+  //save - btn.addEventListener("click");
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
